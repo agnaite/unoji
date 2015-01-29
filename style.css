@@ -1,0 +1,50 @@
+
+
+header {
+	background-color: #16a085;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	
+}
+
+h1 {
+	color: #ecf0f1;
+	text-align: left;
+	margin-left: 40px;
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 44px;
+	font-weight: 700;
+	letter-spacing: 3px;
+}
+
+.facesList{
+	width: 800px;
+	margin: auto;
+	text-align: left;
+	padding-top: 80px;
+}
+
+a {
+	display: inline-block;
+	width: 120px;
+	height: 60px;
+	background-color: white;
+	padding-top: 50px;
+	padding-bottom: -50px;
+	text-align: center;
+	/*border: 1px solid #bdc3c7;*/
+	margin: auto;
+	border-radius: 4px;
+	margin: 1px;
+
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+/*a:active {
+	background-color: tomato;
+}*/
+
+/** { border: 1px solid #000;}*/
