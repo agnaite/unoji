@@ -43,8 +43,21 @@ a:hover {
 	cursor: pointer;
 }
 
-/*a:active {
-	background-color: tomato;
-}*/
+@media all and (max-width: 768px) {
+		.facesList {
+			width: 488px;
+		}
 
-/** { border: 1px solid #000;}*/
+		h1 {
+			text-align: center;
+			margin: 0;
+		}
+	}
+
+@media all and (max-width: 540px) {
+		.facesList {
+			width: 366px;
+		}
+
+		
+	}

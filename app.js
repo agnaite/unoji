@@ -25,6 +25,12 @@ var i = 0;
  	i++;	
   }
 
+$("a").click(function(){
+	swal({   title: "Copied to clipboard!",   
+	text: this.textContent,  
+	timer: 1000 });
+});
+
 $("a").mouseenter(function() {
 	$(this).css("background-color", "#f1c40f");
 	// console.log(this.textContent);
