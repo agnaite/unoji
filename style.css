@@ -2,8 +2,8 @@
 
 header {
 	background-color: #16a085;
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 	
 }
 
@@ -17,14 +17,36 @@ h1 {
 	letter-spacing: 3px;
 }
 
-.facesList{
+.container{
 	width: 800px;
 	margin: auto;
 	text-align: left;
 	padding-top: 80px;
+	padding-bottom: 60px;
 }
 
-a {
+/*emotions descriptions*/
+
+h3 {
+	padding-bottom: 15px;
+	text-align: left;
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 28px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	margin-left: 8px;
+
+}
+
+h3 a {
+	text-decoration: none;
+	color: #8C8C8C;
+	padding: 8px;
+
+}
+
+/*unojis*/
+.btn {
 	display: inline-block;
 	width: 120px;
 	height: 60px;
@@ -36,6 +58,7 @@ a {
 	margin: auto;
 	border-radius: 4px;
 	margin: 1px;
+	overflow: hidden;
 
 }
 
@@ -44,7 +67,7 @@ a:hover {
 }
 
 @media all and (max-width: 768px) {
-		.facesList {
+		.container {
 			width: 488px;
 		}
 
@@ -55,7 +78,7 @@ a:hover {
 	}
 
 @media all and (max-width: 540px) {
-		.facesList {
+		.container {
 			width: 366px;
 		}
 

@@ -1,216 +1,183 @@
 $("body").css("background-color", "#ecf0f1");
 
-var faces = // all the faces in one convenient array
-[
-  "( ͡° ͜ʖ ͡°)",
-  "(V)(°,,°)(V)",
-  "(─‿‿─)",
-  "(✿◠‿◠)",
-  "(。・_・。)",
-  "{◕ ◡ ◕}",
-  "¯\\_(ツ)_/¯",
-  "ʕ•ᴥ•ʔ",
-  "༼ つ ◕_◕༽つ",
-  "‹(ᵒᴥᵒ)›",
-  "⊙▃⊙",
-  "⊙﹏⊙",
-  "ツ",
-  "三 ┏( ^o^)┛",
-  "( .-. )",
-  "( .o.)",
-  "( `·´ )",
-  "( ° ͜ ʖ °)",
-  "( ͡° ͜ʖ ͡°)",
-  "( ⚆ _ ⚆ )",
-  "( ︶︿︶)",
-  "( ﾟヮﾟ)",
-  "(\\/)(°,,,°)(\\/)",
-  "(¬_¬)",
-  "(¬º-°)¬",
-  "(¬‿¬)",
-  "(°ロ°)☝",
-  "(´・ω・)っ",
-  "(ó ì_í)",
-  "(ʘᗩʘ')",
-  "(ʘ‿ʘ)",
-  "(͡° ͜ʖ ͡°)",
-  "(ಠ_ಠ)",
-  "(ಠ‿ಠ)",
-  "(ಠ⌣ಠ)",
-  "(ಥ_ಥ)",
-  "(ಥ﹏ಥ)",
-  "(ง ͠° ͟ل͜ ͡°)ง",
-  "(ง ͡ʘ ͜ʖ ͡ʘ)ง",
-  "(ง •̀_•́)ง",
-  "(ง'̀-'́)ง",
-  "(ง°ل͜°)ง",
-  "(ง⌐□ل͜□)ง",
-  "(ღ˘⌣˘ღ)",
-  "(ᵔᴥᵔ)",
-  "(•ω•)",
-  "(•◡•)/",
-  "(⊙ω⊙)",
-  "(⌐■_■)",
-  "(─‿‿─)",
-  "(╯°□°）╯",
-  "(◕‿◕)",
-  "(☞ﾟ∀ﾟ)☞",
-  "(❍ᴥ❍ʋ)",
-  "(っ◕‿◕)っ",
-  "(づ｡◕‿‿◕｡)づ",
-  "(ノಠ益ಠ)ノ",
-  "(ノ・∀・)ノ",
-  "(；一_一)",
-  "(｀◔ ω ◔´)",
-  "(｡◕‿‿◕｡)",
-  "(ﾉ◕ヮ◕)ﾉ",
-  "*<{:¬{D}}}",
-  "=^.^=",
-  "t(-.-t)",
-  "| (• ◡•)|",
-  "~(˘▾˘~)",
-  "¬_¬",
-  "¯(°_o)/¯",
-  "¯\_(ツ)_/¯",
-  "°Д°",
-  "ɳ༼ຈل͜ຈ༽ɲ",
-  "ʅʕ•ᴥ•ʔʃ",
-  "ʕ´•ᴥ•`ʔ",
-  "ʕ•ᴥ•ʔ",
-  "ʕ◉.◉ʔ",
-  "ʕㅇ호ㅇʔ",
-  "ʕ；•`ᴥ•´ʔ",
-  "ʘ‿ʘ",
-  "͡° ͜ʖ ͡°",
-  "ζ༼Ɵ͆ل͜Ɵ͆༽ᶘ",
-  "Ѱζ༼ᴼل͜ᴼ༽ᶘѰ",
-  "ب_ب",
-  "٩◔̯◔۶",
-  "ಠ_ಠ",
-  "ಠoಠ",
-  "ಠ~ಠ",
-  "ಠ‿ಠ",
-  "ಠ⌣ಠ",
-  "ಠ╭╮ಠ",
-  "ರ_ರ",
-  "ง ͠° ل͜ °)ง",
-  "๏̯͡๏﴿",
-  "༼ ºººººل͟ººººº ༽",
-  "༼ ºل͟º ༽",
-  "༼ ºل͟º༼",
-  "༼ ºل͟º༽",
-  "༼ ͡■ل͜ ͡■༽",
-  "༼ つ ◕_◕ ༽つ",
-  "༼ʘ̚ل͜ʘ̚༽",
-  "ლ(´ڡ`ლ)",
-  "ლ(́◉◞౪◟◉‵ლ)",
-  "ლ(ಠ益ಠლ)",
-  "ᄽὁȍ ̪őὀᄿ",
-  "ᔑ•ﺪ͟͠•ᔐ",
-  "ᕕ( ᐛ )ᕗ",
-  "ᕙ(⇀‸↼‶)ᕗ",
-  "ᕙ༼ຈل͜ຈ༽ᕗ",
-  "ᶘ ᵒᴥᵒᶅ",
-  "‎‎(ﾉಥ益ಥ）ﾉ",
-  "≧☉_☉≦",
-  "⊙▃⊙",
-  "⊙﹏⊙",
-  "┌( ಠ_ಠ)┘",
-  "╚(ಠ_ಠ)=┐",
-  "◉_◉",
-  "◔ ⌣ ◔",
-  "◔̯◔",
-  "◕‿↼",
-  "◕‿◕",
-  "☉_☉",
-  "☜(⌒▽⌒)☞",
-  "☼.☼",
-  "♥‿♥",
-  "⚆ _ ⚆",
-  "✌(-‿-)✌",
-  "〆(・∀・＠)",
-  "ノ( º _ ºノ)",
-  "ノ( ゜-゜ノ)",
-  "ヽ( ͝° ͜ʖ͡°)ﾉ",
-  "ヽ(`Д´)ﾉ",
-  "ヽ༼° ͟ل͜ ͡°༽ﾉ",
-  "ヽ༼ʘ̚ل͜ʘ̚༽ﾉ",
-  "ヽ༼ຈل͜ຈ༽ง",
-  "ヽ༼ຈل͜ຈ༽ﾉ",
-  "ヽ༼Ὸل͜ຈ༽ﾉ",
-  "ヾ(⌐■_■)ノ",
-  "꒰･◡･๑꒱",
-  "﴾͡๏̯͡๏﴿",
-  "｡◕‿◕｡",
-  "ʕノ◔ϖ◔ʔノ",
-  "ಠ_ರೃ",
-  "(ꈨຶꎁꈨຶ)۶”",
-  "(ꐦ°᷄д°᷅)",
-  "(*ﾟ⚙͠ ∀ ⚙͠)ﾉ❣",
-  "٩꒰･ัε･ั ꒱۶",
-  "ヘ（。□°）ヘ",
-  "꒰✘Д✘◍꒱",
-  "૮( ᵒ̌ૢཪᵒ̌ૢ )ა",
-  "“ψ(｀∇´)ψ",
-  "ಠﭛಠ",
-  "(๑>ᴗ<๑)",
-  "(۶ꈨຶꎁꈨຶ )۶ʸᵉᵃʰᵎ",
-  "(oT-T)尸",
-  "(✌ﾟ∀ﾟ)☞",
-  "ಥ‿ಥ",
-  "ॱ॰⋆(˶ॢ‾᷄﹃‾᷅˵ॢ)",
-  "( ˘ ³˘)♥",
-  "(⑅ ॣ•͈ᴗ•͈ ॣ)",
-  "ヾ(´￢｀)ﾉ",
-  "(•̀o•́)ง",
-  "(๑•॒̀ ູ॒•́๑)",
-  "⚈้̤͡ ˌ̫̮ ⚈้̤͡",
-  "=͟͟͞͞ =͟͟͞͞ ﾍ( ´Д`)ﾉ",
-  "(((╹д╹;)))",
-  "•̀.̫•́✧",
-  "(ᵒ̤̑ ₀̑ ᵒ̤̑)",
-  "\_(ʘ_ʘ)_/"
+var angry = // all the faces in one convenient array
+[{ face: "ಠ_ಠ" },
+{ face: "( ≧Д≦)" },
+{ face: "o(-`д´- 。)" },
+{ face: "(；￣Д￣" },
+{ face: "(」゜ロ゜)" },
+{ face: "凸(｀0´)凸" },
+{ face: "(*｀へ´*)" },
+{ face: "(*≧m≦*)" },
+{ face: "(/ﾟДﾟ)/" },
+{ face: "(＃｀д´)ﾉ" },
+{ face: "( •̀ω•́ )σ" },
+{ face: "(*￣m￣)" },
+{ face: "(>人<)" },
+{ face: "( ꒪Д꒪)ノ" },
+{ face: "(#ಠQಠ#)" },
+{ face: "(　ﾟДﾟ)＜!!" },
+{ face: "(´･益･｀*)" },
+{ face: "(´Д｀)" },
+{ face: "( ಠ ಠ )" },
+{ face: "(･｀ｪ´･)つ" },
+{ face: "(҂⌣̀_⌣́)" },
+{ face: "＼(｀0´)／" },
+{ face: "(>_<)" },
+{ face: "（＞д＜）" },
+{ face: "ヽ(●-`Д´-)ノ" },
+{ face: "(((p(>o<)q)))" },
+{ face: "(≧σ≦)" },
+{ face: "(╯°□°）╯︵ ┻━┻" },
+{ face: "(ノಠ益ಠ)ノ" },
+{ face: "ヽ༼ ಠ益ಠ ༽ﾉ" },
+{ face: "(ಠ⌣ಠ)" },
+{ face: "[○･｀Д´･○]" },
+{ face: "{{|└(>o< )┘|}}" },
+{ face: "＼(・｀(ｪ)・)/" },
+{ face: "＼(〇O〇)／" },
+{ face: "＼(＠O＠)／" },
+{ face: "( #`⌂´)/┌┛" },
+{ face: "ヾ( ･`⌓´･)ﾉﾞ" },
+{ face: "＼(>o<)ノ" },
+{ face: "＼( ｀.∀´)／" },
+{ face: "ヽ(≧Д≦)ノ" },
+{ face: "o(≧o≦)o" },
+{ face: "ヽ(#`Д´)ﾉ" },
+{ face: "ヽ(ｏ`皿′ｏ)ﾉ" },
+{ face: "ヽ(｀◇´)/" },
+{ face: "ヽ(￣д￣;)ノ" },
+{ face: "o(>< )o" },
+{ face: "ლ(ಠ_ಠლ)" },
+{ face: "ಠ▃ಠ" },
+{ face: "ಥ⌣ಥ" },
+{ face: "ᕦ(ò_óˇ)ᕤ" },
+{ face: "ᕙ(⇀‸↼‶)ᕗ" },
+{ face: "凸(｀⌒´メ)凸" },
+{ face: "(⁎˃ᆺ˂)" },
+{ face: "(ᗒᗣᗕ)՞" },
+{ face: "(,,Ծ‸Ծ,, )" },
+{ face: "┗(•̀へ •́ ╮ )”" },
+{ face: "ఠ ͟ಠ" },
+{ face: "(ఠ్ఠ ˓̭ ఠ్ఠ)" },
+{ face: "( ｰ̀εｰ́ )" },
+{ face: "<(｀^´)>" },
+{ face: "(;｀O´)o" },
+{ face: "( ‾᷅⚰‾᷄ )" },
+{ face: "(｀◕‸◕´+)" },
+{ face: "( ︶︿︶)_╭∩╮" },
+{ face: "( ͒˃⌂˂ ͒)" },
+{ face: "ヽ(｀⌒´)ﾉ" },
+{ face: "༼ つ ͠° ͟ ͟ʖ ͡° ༽つ" },
+{ face: "ʕ •̀ o •́ ʔ" },
+{ face: "୧ʕ ⇀ ⌂ ↼ ʔ୨" },
+{ face: "ヾ(｀⌒´メ)ノ″" },
+{ face: "ヽ(｀○´)/" },
+{ face: "v(｀皿´)ﾉ~" },
+{ face: "(#｀皿´)" },
+{ face: "(ﾉ｀Д´)ﾉ" },
+{ face: "୧▒ •̀ o •́ ▒୨" },
+{ face: "（○｀Ｏ´○）" },
+{ face: "ヽ(｀δ´)ノ" },
+{ face: "ヾ(｀◇´)ﾉ彡" },
+{ face: "┗(｀皿´)┛" }
+
 ];
 
+var unoji = [];
+
+// var index = lunr(function() {
+//   this.field('categories', { boost: 10 })
+//   this.ref('id')
+// });
+
 var i = 0;
+while(i < angry.length) {
+  unoji[i] = {
+    id: i+1,
+    face: angry[i].face,
+    // categories: faces[i].categories[0]
+  };
 
- while(i < faces.length) {
- 	var item = faces[i];
- 	$(".facesList").append("<a class='btn'>"+item+"</a>");
- 	i++;	
-  }
+  // var item = unoji[i].face;
+  // $(".container").append("<a class='btn'>"+item+"</a>");
 
-$("a").click(function(){
+  i++;
+}
+
+var i = 1;
+
+
+//shows 6 random angry unojis
+
+$(".angry").prepend("<h3><a href="+"#"+">Angry</a></h3>");
+// $(".")
+
+while(i < 7) {
+  r = Math.floor((Math.random() * angry.length-1) + 1);
+
+  var item = angry[r].face;
+  $(".angry").append("<a class='btn'>"+item+"</a>");
+  
+  i++;
+}
+
+// unoji.forEach(function (x) {
+//   index.add(x)
+// })
+
+
+ // while(i < unoji.length) {
+ // 	var item = unoji[i].face;
+ // 	$(".container").append("<a class='btn'>"+item+"</a>");
+
+ //  index.add
+ //  // index.add({
+ //  //   id: i,
+ //  //   title: item,
+ //  //   body: 'Foo foo foo!',
+ //  // });
+ //  // console.log(index);
+ //  i++;  
+ //  }
+
+// $(".angry a").click(function(){
+//   angry.forEach(function (x) {
+//     $(".angry").append("<a class='btn'>"+item+"</a>");
+//   })
+// });
+
+$(".btn").click(function(){
 	swal({   title: "Copied to clipboard!",   
 	text: this.textContent,  
 	timer: 1000 });
 });
 
-$("a").mouseenter(function() {
+$(".btn").mouseenter(function() {
 	$(this).css("background-color", "#f1c40f");
 	// console.log(this.textContent);
 });
 
-$("a").mouseleave(function() {
+$(".btn").mouseleave(function() {
 	$(this).css("background-color", "white");
 	// console.log(this.textContent);
 });
 
 var client = new ZeroClipboard( $('.btn') );
 
-      client.on( 'ready', function(event) {
-        // console.log( 'movie is loaded' );
+client.on( 'ready', function(event) {
+  // console.log( 'movie is loaded' );
 
-        client.on( 'copy', function(event) {
-          event.clipboardData.setData('text/plain', event.target.innerHTML);
-        } );
+  client.on( 'copy', function(event) {
+    event.clipboardData.setData('text/plain', event.target.innerHTML);
+  } );
 
-        client.on( 'aftercopy', function(event) {
-          console.log('Copied text to clipboard: ' + event.data['text/plain']);
-        } );
-      } );
+  client.on( 'aftercopy', function(event) {
+    console.log('Copied text to clipboard: ' + event.data['text/plain']);
+  } );
+} );
 
-      client.on( 'error', function(event) {
-        // console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
-        ZeroClipboard.destroy();
-      } );
+client.on( 'error', function(event) {
+  // console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+  ZeroClipboard.destroy();
+} );
