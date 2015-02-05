@@ -84,43 +84,163 @@ var angry = // all the faces in one convenient array
 
 ];
 
-var unoji = [];
+var happy =
+[{ face: "( ´ ▽ ` )ﾉ" },
+{ face: "(｡´∀｀)ﾉ" },
+{ face: "(((o(*ﾟ▽ﾟ*)o)))" },
+{ face: "(*´・ｖ・)" },
+{ face: "(*^▽^*)" },
+{ face: "(´∇ﾉ｀*)ノ" },
+{ face: "（＾凹＾）" },
+{ face: "(^～^)" },
+{ face: "(^・ω・^ )" },
+{ face: "(=^-ω-^=)" },
+{ face: "(=^･ω･^)y＝" },
+{ face: "(¬‿¬)" },
+{ face: "＼（＠￣∇￣＠）／" },
+{ face: "(ノ^∇^)" },
+{ face: "(★^O^★)" },
+{ face: "＼(^▽^＠)ノ" },
+{ face: "⊂((・▽・))⊃" },
+{ face: "Ｏ(≧▽≦)Ｏ" },
+{ face: "o((*^▽^*))o" },
+{ face: "ヾ(@^▽^@)ノ" },
+{ face: "ლ(⌒▽⌒ლ)" },
+{ face: "-(๑☆‿ ☆#)ᕗ" },
+{ face: "。(⌒∇⌒。)" },
+{ face: "〜(￣▽￣〜)" },
+{ face: "〜(^∇^〜）" },
+{ face: "｡^‿^｡" },
+{ face: "｡◕‿◕｡" },
+{ face: "( ^_^)／" },
+{ face: "(　´∀｀)" },
+{ face: "( ´ ▽ ` )ﾉ" },
+{ face: "(　＾∇＾)" },
+{ face: "( ͡° ͜ʖ ͡°)" },
+{ face: "( ⋂‿⋂’)" },
+{ face: "( ﾟ▽ﾟ)/" },
+{ face: "( ﾉ^ω^)ﾉﾟ" },
+{ face: "（‐＾▽＾‐）" },
+{ face: "(-^〇^-)" },
+{ face: "(-‿◦☀)" },
+{ face: "(“⌒∇⌒”)" },
+{ face: "(。⌒∇⌒)。" },
+{ face: "(((o(*ﾟ▽ﾟ*)o)))" },
+{ face: "(*‿*✿)" },
+{ face: "(*^▽^*)" },
+{ face: "(*≧▽≦)" },
+{ face: "(*⌒∇⌒*)" },
+{ face: "(•‿•)" },
+{ face: "(/^▽^)/" },
+{ face: "(´ω｀★)" },
+{ face: "（=´∇｀=）" },
+{ face: "(=^･^=)" },
+{ face: "(＝⌒▽⌒＝)" },
+{ face: "(≡^∇^≡)" },
+{ face: "（⌒▽⌒）" },
+{ face: "(⌒▽⌒)☆" },
+{ face: "(●⌒∇⌒●)" },
+{ face: "(◑‿◐)" },
+{ face: "(☆^ー^☆)”" },
+{ face: "(☆^O^☆)" },
+{ face: "(❀◦‿◦)" },
+{ face: "(✿´‿`)" },
+{ face: "ʘ‿ʘ" },
+{ face: "ಥ‿ಥ" },
+{ face: "ヘ(^_^ヘ)" },
+{ face: "ヘ(^o^ヘ)" },
+{ face: "(✿◠‿◠)" },
+{ face: "(◡‿◡✿)" },
+{ face: "˙ ͜ʟ˙" },
+{ face: "◦°˚\(*❛‿❛)/˚°◦" },
+{ face: "(　◠ ◡ ◠　)" },
+{ face: "〤◕‿◕〤" },
+{ face: "ᕕ( ᐛ )ᕗ" },
+{ face: "☜(⌒▽⌒)☞" },
+{ face: "୧[ ˵ ͡ᵔ ͜ʟ ͡ᵔ ˵ ]୨" },
+{ face: "♪♪ｖ(⌒ｏ⌒)ｖ♪♪" },
+{ face: "ﾍ(=￣∇￣)ﾉ" },
+{ face: "❀◕ ‿ ◕❀" },
+{ face: "ヾ(^▽^ヾ)" },
+{ face: "（★￣∀￣★）" },
+{ face: "(✿╹◡╹)" },
+{ face: "(o˘◡˘o)" }
+
+];
+
+// puts ALL the unojis in one array for whatever future use
+// var unoji = [];
 
 // var index = lunr(function() {
 //   this.field('categories', { boost: 10 })
 //   this.ref('id')
 // });
 
-var i = 0;
-while(i < angry.length) {
-  unoji[i] = {
-    id: i+1,
-    face: angry[i].face,
-    // categories: faces[i].categories[0]
-  };
+// var i = 0;
+// while(i < angry.length) {
+//   unoji[i] = {
+//     id: i+1,
+//     face: angry[i].face,
+//     // categories: faces[i].categories[0]
+//   };
 
-  // var item = unoji[i].face;
-  // $(".container").append("<a class='btn'>"+item+"</a>");
+//   var item = unoji[i].face;
+//   $(".container").append("<a class='btn'>"+item+"</a>");
 
-  i++;
-}
+//   i++;
+// }
 
+//shows 6 random ANGRY unojis
 var i = 1;
-
-
-//shows 6 random angry unojis
-
-$(".angry").prepend("<h3><a href="+"#"+">Angry</a></h3>");
-// $(".")
 
 while(i < 7) {
   r = Math.floor((Math.random() * angry.length-1) + 1);
 
   var item = angry[r].face;
-  $(".angry").append("<a class='btn'>"+item+"</a>");
+  $(".random-angry").append("<a class='btn'>"+item+"</a>");
   
   i++;
 }
+
+//puts all other ANGRY unojis with display off in div
+var x = 0;
+
+while(x < angry.length) {
+   var item = angry[x].face;
+   $(".content-angry").append("<a class='btn'>"+item+"</a>");
+
+   x++;
+}
+
+//expands hidden unojis
+
+$('.expander-angry').simpleexpand({'defaultTarget':'.content-angry'});
+
+//shows 6 random HAPPY unojis
+var i = 1;
+
+while(i < 7) {
+  r = Math.floor((Math.random() * happy.length-1) + 1);
+
+  var item = happy[r].face;
+  $(".random-happy").append("<a class='btn'>"+item+"</a>");
+  
+  i++;
+}
+
+//puts all other HAPPY unojis with display off in div
+var x = 0;
+
+while(x < happy.length) {
+   var item = happy[x].face;
+   $(".content-happy").append("<a class='btn'>"+item+"</a>");
+
+   x++;
+}
+
+//expands hidden unojis
+
+$('.expander-happy').simpleexpand({'defaultTarget':'.content-happy'});
 
 // unoji.forEach(function (x) {
 //   index.add(x)
