@@ -1,4 +1,4 @@
-$("body").css("background-color", "#ecf0f1");
+$("body").css("background-color", "white");
 
 var angry = // all the faces in one convenient array
 [{ face: "ಠ_ಠ" },
@@ -168,36 +168,64 @@ var happy =
 
 ];
 
-// puts ALL the unojis in one array for whatever future use
-// var unoji = [];
+var confused =
+[ { face: "(゜-゜)" },
+{ face: "(・_・ヾ" },
+{ face: "(•ิ_•ิ)?" },
+{ face: "｢(ﾟﾍﾟ)" },
+{ face: "(｀_´)ゞ" },
+{ face: "(´･_･`)" },
+{ face: "(。ヘ°)" },
+{ face: "(´−｀) ﾝｰ" },
+{ face: "(」・ω・)」" },
+{ face: "( ・◇・)？" },
+{ face: "(」゜ロ゜)」" },
+{ face: "(」ﾟヘﾟ)」" },
+{ face: "(￣■￣;)!?" },
+{ face: "(」ﾟﾛﾟ)｣" },
+{ face: "( •᷄ὤ•᷅)？" },
+{ face: "(＃⌒∇⌒＃)ゞ" },
+{ face: "(゜。゜)" },
+{ face: "(⊙_☉)" },
+{ face: "(⊙_◎)" },
+{ face: "(◎_◎;)" },
+{ face: "(●__●)" },
+{ face: "(☉_☉)" },
+{ face: "(C_C)" },
+{ face: "ヽ(゜Q。)ノ？" },
+{ face: "●.◉" },
+{ face: "c( O.O )ɔ" },
+{ face: "щ(゜ロ゜щ)" },
+{ face: "ఠ_ఠ" },
+{ face: "ʕ•ૅૄ•ʔ" },
+{ face: "ɾ◉⊆◉ɹ" },
+{ face: "(o゜ー゜o)??" },
+{ face: "（・∩・）？" },
+{ face: "Σ(￣□￣lll)" },
+{ face: "( -_・)?" }
+];
 
-// var index = lunr(function() {
-//   this.field('categories', { boost: 10 })
-//   this.ref('id')
-// });
+var toggleText = function(expander){
+    $(expander).append("<span>+</span>").click(function() {
+        var $sp = $('span', this);
+        $(this).nextUntil("hr").slideToggle("fast");
+        $sp.text( $sp.text()=="+"?"−":"+");
+    }).nextUntil("hr").hide();
+}
 
-// var i = 0;
-// while(i < angry.length) {
-//   unoji[i] = {
-//     id: i+1,
-//     face: angry[i].face,
-//     // categories: faces[i].categories[0]
-//   };
+toggleText(".expander-angry");
+toggleText(".expander-happy");
+toggleText(".expander-confused");
 
-//   var item = unoji[i].face;
-//   $(".container").append("<a class='btn'>"+item+"</a>");
-
-//   i++;
-// }
-
-//shows 6 random ANGRY unojis
 var i = 1;
+
+//gets random ANGRY 6 emojis
 
 while(i < 7) {
   r = Math.floor((Math.random() * angry.length-1) + 1);
 
   var item = angry[r].face;
-  $(".random-angry").append("<a class='btn'>"+item+"</a>");
+  $(".random-angry").append("<a class='unoji'>"+item+"</a>");
   
   i++;
 }
@@ -207,13 +235,12 @@ var x = 0;
 
 while(x < angry.length) {
    var item = angry[x].face;
-   $(".content-angry").append("<a class='btn'>"+item+"</a>");
+   $(".content-angry").append("<a class='unoji'>"+item+"</a>");
 
    x++;
 }
 
 //expands hidden unojis
-
 $('.expander-angry').simpleexpand({'defaultTarget':'.content-angry'});
 
 //shows 6 random HAPPY unojis
@@ -223,7 +250,7 @@ while(i < 7) {
   r = Math.floor((Math.random() * happy.length-1) + 1);
 
   var item = happy[r].face;
-  $(".random-happy").append("<a class='btn'>"+item+"</a>");
+  $(".random-happy").append("<a class='unoji'>"+item+"</a>");
   
   i++;
 }
@@ -233,7 +260,7 @@ var x = 0;
 
 while(x < happy.length) {
    var item = happy[x].face;
-   $(".content-happy").append("<a class='btn'>"+item+"</a>");
+   $(".content-happy").append("<a class='unoji'>"+item+"</a>");
 
    x++;
 }
@@ -242,48 +269,45 @@ while(x < happy.length) {
 
 $('.expander-happy').simpleexpand({'defaultTarget':'.content-happy'});
 
-// unoji.forEach(function (x) {
-//   index.add(x)
-// })
+//gets random CONFUSED 6 emojis
+
+var i = 1;
+
+while(i < 7) {
+  r = Math.floor((Math.random() * confused.length-1) + 1);
+
+  var item = confused[r].face;
+  $(".random-confused").append("<a class='unoji'>"+item+"</a>");
+  
+  i++;
+}
+
+//puts all other CONFUSED unojis with display off in div
+var x = 0;
+
+while(x < confused.length) {
+   var item = confused[x].face;
+   $(".content-confused").append("<a class='unoji'>"+item+"</a>");
+
+   x++;
+}
+
+//expands hidden unojis
+$('.expander-confused').simpleexpand({'defaultTarget':'.content-confused'});
 
 
- // while(i < unoji.length) {
- // 	var item = unoji[i].face;
- // 	$(".container").append("<a class='btn'>"+item+"</a>");
+$(".unoji").hover(function () {
+   $(this).toggleClass("hoverColor");
+});
 
- //  index.add
- //  // index.add({
- //  //   id: i,
- //  //   title: item,
- //  //   body: 'Foo foo foo!',
- //  // });
- //  // console.log(index);
- //  i++;  
- //  }
-
-// $(".angry a").click(function(){
-//   angry.forEach(function (x) {
-//     $(".angry").append("<a class='btn'>"+item+"</a>");
-//   })
-// });
-
-$(".btn").click(function(){
+$(".unoji").click(function(){
 	swal({   title: "Copied to clipboard!",   
 	text: this.textContent,  
 	timer: 1000 });
 });
 
-$(".btn").mouseenter(function() {
-	$(this).css("background-color", "#f1c40f");
-	// console.log(this.textContent);
-});
 
-$(".btn").mouseleave(function() {
-	$(this).css("background-color", "white");
-	// console.log(this.textContent);
-});
-
-var client = new ZeroClipboard( $('.btn') );
+var client = new ZeroClipboard( $('.unoji') );
 
 client.on( 'ready', function(event) {
   // console.log( 'movie is loaded' );

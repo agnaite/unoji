@@ -1,56 +1,104 @@
+* {
+	text-decoration: none;
+}
 
-
-header {
-	background-color: #16a085;
+/*header*/
+.hdr {
+	background-image: linear-gradient(-90deg, #F6FF00, #FF00A1);
+	width: 100%;
+	height: 70px;
 	padding-top: 30px;
-	padding-bottom: 30px;
-	
+	/*padding-bottom: 30px;*/	
 }
 
 h1 {
-	color: #ecf0f1;
+	float: left;
+	color: white;
 	text-align: left;
 	margin-left: 40px;
 	font-family: 'Droid Sans', sans-serif;
-	font-size: 44px;
+	font-size: 48px;
 	font-weight: 700;
-	letter-spacing: 3px;
+	letter-spacing: 4px;
+}
+
+
+.dropdown button {
+	float: right;
+	margin-right: 40px;
+	margin-top: 30px;
+	background: none;
+	border: none;
+	color: white;
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 28px;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+
+.dropdown-menu {
+	position: relative;
+	float: right;
+	margin-right: -180px;
+	margin-top: 70px;
+	padding: 10px;
+}
+
+.dropdown-menu li a {
+	
+	font-size: 24px;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: 700;
+	color: #8C8C8C;
+}
+
+.dropdown-menu li a:hover {
+	color: #00ccff;
 }
 
 .container{
-	width: 800px;
+	width: 732px;
 	margin: auto;
 	text-align: left;
-	padding-top: 80px;
+	padding-top: 60px;
 	padding-bottom: 60px;
 }
 
 /*emotions descriptions*/
 
 h3 {
+	color: #8C8C8C;
 	padding-bottom: 15px;
 	text-align: left;
 	font-family: 'Droid Sans', sans-serif;
 	font-size: 28px;
 	font-weight: 700;
-	letter-spacing: 3px;
-	margin-left: 8px;
+	letter-spacing: 2px;
+	/*margin-left: 8px;*/
 
 }
 
 h3 a {
 	text-decoration: none;
-	color: #8C8C8C;
-	padding: 8px;
+	font-size: 36px;
+	padding-left: 10px;
+	position: relative;
+	top: 4px;
+	font-weight: 900;
 
 }
 
+h3 a:hover {
+	color: #00ccff;
+}
+
+
 /*unojis*/
-.btn {
+.unoji {
 	display: inline-block;
 	width: 120px;
 	height: 60px;
-	background-color: white;
+	background-color: #ecf0f1;
 	padding-top: 50px;
 	padding-bottom: -50px;
 	text-align: center;
@@ -60,6 +108,11 @@ h3 a {
 	margin: 1px;
 	overflow: hidden;
 
+}
+
+
+.hoverColor { 
+	background-color: #00ccff; 
 }
 
 a:hover {
