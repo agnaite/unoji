@@ -205,6 +205,22 @@ var confused =
 { face: "( -_・)?" }
 ];
 
+var navigateTo = function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  };
+
 var toggleText = function(expander){
     $(expander).append("<span>+</span>").click(function() {
         var $sp = $('span', this);
@@ -212,6 +228,8 @@ var toggleText = function(expander){
         $sp.text( $sp.text()=="+"?"−":"+");
     }).nextUntil("hr").hide();
 }
+
+navigateTo();
 
 toggleText(".expander-angry");
 toggleText(".expander-happy");

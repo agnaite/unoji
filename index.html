@@ -3,50 +3,48 @@
 	<meta charset="UTF-8"/>
 	<title>unoji</title>
 	<link rel="stylesheet" type="text/css" href="reset.css">
-	<link rel="stylesheet" href="bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="sweetAlert/sweet-alert.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div>
-		<header class="hdr">
-			<h1>Unoji</h1>
-			<div class="dropdown">
-				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Categories<span class="caret"></span></button>
-				<ul class="dropdown-menu menu" role="menu" aria-labelledby="dropdownMenu1">
-					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Happy</a></li>
-					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Angry</a></li>
-					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Confused</a></li>
+	<header>
+		<h1>Unoji</h1>
+		<ul class="menu">
+			<li class="categories">Categories▾
+				<ul class="dropdown-menu">
+					<li><a href="#section-happy">Happy</a></li>
+					<li><a href="#section-angry">Angry</a></li>
+					<li><a href="#section-confused">Confused</a></li>
 				</ul>
-			</div>
-		</header>
-	</div>
+			</li>
+			<li class="about"><a href="#">About</a></li>
+		</ul>
+	</header>
 	<div class="container">
 		<div class="happy">
-			<h3>Happy<a class="expander-happy"></a></h3>
+			<h3>Happy<a class="expander-happy" id="section-happy"></a></h3>
 			<div class="random-happy"></div>
 			<div class="content-happy"></div>
 		</div><br>
 		<div class="angry">
-			<h3>Angry<a class="expander-angry"></a></h3>
+			<h3>Angry<a class="expander-angry" id="section-angry"></a></h3>
 			<div class="random-angry"></div>
 			<div class="content-angry"></div>
 		<div class="confused"><br>
-			<h3>Confused<a class="expander-confused section3"></a></h3>
+			<h3>Confused<a class="expander-confused" id="section-confused"></a></h3>
 			<div class="random-confused"></div>
 			<div class="content-confused"></div>
 		</div>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		
-		
-		<!-- <button class="click">hi</button> -->
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript" src="bootstrap.min.js"></script>
 	<script type="text/javascript" src="ZeroClipboard.js"></script>
 	<script src="sweetAlert/sweet-alert.min.js"></script> 
 	<script type="text/javascript" src="expand.js"></script>
-	<script type="text/javascript" src="lunar.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 
 </body>

@@ -3,12 +3,11 @@
 }
 
 /*header*/
-.hdr {
+header {
 	background-image: linear-gradient(-90deg, #F6FF00, #FF00A1);
 	width: 100%;
 	height: 70px;
 	padding-top: 30px;
-	/*padding-bottom: 30px;*/	
 }
 
 h1 {
@@ -22,13 +21,12 @@ h1 {
 	letter-spacing: 4px;
 }
 
-
-.dropdown button {
+.about,
+.categories {
 	float: right;
-	margin-right: 40px;
-	margin-top: 30px;
-	background: none;
-	border: none;
+	position: relative;
+	margin-right: 44px;
+	margin-top: 22px;
 	color: white;
 	font-family: 'Droid Sans', sans-serif;
 	font-size: 28px;
@@ -37,23 +35,45 @@ h1 {
 }
 
 .dropdown-menu {
-	position: relative;
-	float: right;
-	margin-right: -180px;
-	margin-top: 70px;
-	padding: 10px;
+	background: white;
+	visibility: hidden;
+  	min-width: 150px;
+	position: absolute;
+  	transition: visibility 0.65s ease-in;
+  	margin-top:20px;
+	left: 0;
+	z-index: 999;
+	background-color: #ecf0f1;
+	padding: 8px;
+}
+
+.categories:hover > ul,
+.dropdown-menu:hover {
+   visibility: visible;
 }
 
 .dropdown-menu li a {
-	
 	font-size: 24px;
 	font-family: 'Droid Sans', sans-serif;
 	font-weight: 700;
 	color: #8C8C8C;
+	padding: 8px;
+}
+
+.dropdown-menu li {
+	padding-top: 8px;
+}
+
+.dropdown-menu:first-child {
+	padding-top: 0px;
 }
 
 .dropdown-menu li a:hover {
 	color: #00ccff;
+}
+
+.about a {
+	color: white;
 }
 
 .container{
@@ -92,7 +112,6 @@ h3 a:hover {
 	color: #00ccff;
 }
 
-
 /*unojis*/
 .unoji {
 	display: inline-block;
@@ -115,7 +134,8 @@ h3 a:hover {
 	background-color: #00ccff; 
 }
 
-a:hover {
+a:hover,
+.categories:hover {
 	cursor: pointer;
 }
 
