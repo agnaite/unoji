@@ -1,210 +1,18 @@
-$("body").css("background-color", "white");
+//divutohide header via headroom.js
+(function() {
+    var header = new Headroom(document.querySelector(".headroom"), {
+        tolerance: 5,
+        offset : 205,
+        classes: {
+          initial: "headroom",
+          pinned: "headroom--pinned",
+          unpinned: "headroom--unpinned"
+        }
+    });
+    header.init();
+}());
 
-var angry = // all the faces in one convenient array
-[{ face: "ಠ_ಠ" },
-{ face: "( ≧Д≦)" },
-{ face: "o(-`д´- 。)" },
-{ face: "(；￣Д￣" },
-{ face: "(」゜ロ゜)" },
-{ face: "凸(｀0´)凸" },
-{ face: "(*｀へ´*)" },
-{ face: "(*≧m≦*)" },
-{ face: "(/ﾟДﾟ)/" },
-{ face: "(＃｀д´)ﾉ" },
-{ face: "( •̀ω•́ )σ" },
-{ face: "(*￣m￣)" },
-{ face: "(>人<)" },
-{ face: "( ꒪Д꒪)ノ" },
-{ face: "(#ಠQಠ#)" },
-{ face: "(　ﾟДﾟ)＜!!" },
-{ face: "(´･益･｀*)" },
-{ face: "(´Д｀)" },
-{ face: "( ಠ ಠ )" },
-{ face: "(･｀ｪ´･)つ" },
-{ face: "(҂⌣̀_⌣́)" },
-{ face: "＼(｀0´)／" },
-{ face: "(>_<)" },
-{ face: "（＞д＜）" },
-{ face: "ヽ(●-`Д´-)ノ" },
-{ face: "(((p(>o<)q)))" },
-{ face: "(≧σ≦)" },
-{ face: "(╯°□°）╯︵ ┻━┻" },
-{ face: "(ノಠ益ಠ)ノ" },
-{ face: "ヽ༼ ಠ益ಠ ༽ﾉ" },
-{ face: "(ಠ⌣ಠ)" },
-{ face: "[○･｀Д´･○]" },
-{ face: "{{|└(>o< )┘|}}" },
-{ face: "＼(・｀(ｪ)・)/" },
-{ face: "＼(〇O〇)／" },
-{ face: "＼(＠O＠)／" },
-{ face: "( #`⌂´)/┌┛" },
-{ face: "ヾ( ･`⌓´･)ﾉﾞ" },
-{ face: "＼(>o<)ノ" },
-{ face: "＼( ｀.∀´)／" },
-{ face: "ヽ(≧Д≦)ノ" },
-{ face: "o(≧o≦)o" },
-{ face: "ヽ(#`Д´)ﾉ" },
-{ face: "ヽ(ｏ`皿′ｏ)ﾉ" },
-{ face: "ヽ(｀◇´)/" },
-{ face: "ヽ(￣д￣;)ノ" },
-{ face: "o(>< )o" },
-{ face: "ლ(ಠ_ಠლ)" },
-{ face: "ಠ▃ಠ" },
-{ face: "ಥ⌣ಥ" },
-{ face: "ᕦ(ò_óˇ)ᕤ" },
-{ face: "ᕙ(⇀‸↼‶)ᕗ" },
-{ face: "凸(｀⌒´メ)凸" },
-{ face: "(⁎˃ᆺ˂)" },
-{ face: "(ᗒᗣᗕ)՞" },
-{ face: "(,,Ծ‸Ծ,, )" },
-{ face: "┗(•̀へ •́ ╮ )”" },
-{ face: "ఠ ͟ಠ" },
-{ face: "(ఠ్ఠ ˓̭ ఠ్ఠ)" },
-{ face: "( ｰ̀εｰ́ )" },
-{ face: "<(｀^´)>" },
-{ face: "(;｀O´)o" },
-{ face: "( ‾᷅⚰‾᷄ )" },
-{ face: "(｀◕‸◕´+)" },
-{ face: "( ︶︿︶)_╭∩╮" },
-{ face: "( ͒˃⌂˂ ͒)" },
-{ face: "ヽ(｀⌒´)ﾉ" },
-{ face: "༼ つ ͠° ͟ ͟ʖ ͡° ༽つ" },
-{ face: "ʕ •̀ o •́ ʔ" },
-{ face: "୧ʕ ⇀ ⌂ ↼ ʔ୨" },
-{ face: "ヾ(｀⌒´メ)ノ″" },
-{ face: "ヽ(｀○´)/" },
-{ face: "v(｀皿´)ﾉ~" },
-{ face: "(#｀皿´)" },
-{ face: "(ﾉ｀Д´)ﾉ" },
-{ face: "୧▒ •̀ o •́ ▒୨" },
-{ face: "（○｀Ｏ´○）" },
-{ face: "ヽ(｀δ´)ノ" },
-{ face: "ヾ(｀◇´)ﾉ彡" },
-{ face: "┗(｀皿´)┛" }
-
-];
-
-var happy =
-[{ face: "( ´ ▽ ` )ﾉ" },
-{ face: "(｡´∀｀)ﾉ" },
-{ face: "(((o(*ﾟ▽ﾟ*)o)))" },
-{ face: "(*´・ｖ・)" },
-{ face: "(*^▽^*)" },
-{ face: "(´∇ﾉ｀*)ノ" },
-{ face: "（＾凹＾）" },
-{ face: "(^～^)" },
-{ face: "(^・ω・^ )" },
-{ face: "(=^-ω-^=)" },
-{ face: "(=^･ω･^)y＝" },
-{ face: "(¬‿¬)" },
-{ face: "＼（＠￣∇￣＠）／" },
-{ face: "(ノ^∇^)" },
-{ face: "(★^O^★)" },
-{ face: "＼(^▽^＠)ノ" },
-{ face: "⊂((・▽・))⊃" },
-{ face: "Ｏ(≧▽≦)Ｏ" },
-{ face: "o((*^▽^*))o" },
-{ face: "ヾ(@^▽^@)ノ" },
-{ face: "ლ(⌒▽⌒ლ)" },
-{ face: "-(๑☆‿ ☆#)ᕗ" },
-{ face: "。(⌒∇⌒。)" },
-{ face: "〜(￣▽￣〜)" },
-{ face: "〜(^∇^〜）" },
-{ face: "｡^‿^｡" },
-{ face: "｡◕‿◕｡" },
-{ face: "( ^_^)／" },
-{ face: "(　´∀｀)" },
-{ face: "( ´ ▽ ` )ﾉ" },
-{ face: "(　＾∇＾)" },
-{ face: "( ͡° ͜ʖ ͡°)" },
-{ face: "( ⋂‿⋂’)" },
-{ face: "( ﾟ▽ﾟ)/" },
-{ face: "( ﾉ^ω^)ﾉﾟ" },
-{ face: "（‐＾▽＾‐）" },
-{ face: "(-^〇^-)" },
-{ face: "(-‿◦☀)" },
-{ face: "(“⌒∇⌒”)" },
-{ face: "(。⌒∇⌒)。" },
-{ face: "(((o(*ﾟ▽ﾟ*)o)))" },
-{ face: "(*‿*✿)" },
-{ face: "(*^▽^*)" },
-{ face: "(*≧▽≦)" },
-{ face: "(*⌒∇⌒*)" },
-{ face: "(•‿•)" },
-{ face: "(/^▽^)/" },
-{ face: "(´ω｀★)" },
-{ face: "（=´∇｀=）" },
-{ face: "(=^･^=)" },
-{ face: "(＝⌒▽⌒＝)" },
-{ face: "(≡^∇^≡)" },
-{ face: "（⌒▽⌒）" },
-{ face: "(⌒▽⌒)☆" },
-{ face: "(●⌒∇⌒●)" },
-{ face: "(◑‿◐)" },
-{ face: "(☆^ー^☆)”" },
-{ face: "(☆^O^☆)" },
-{ face: "(❀◦‿◦)" },
-{ face: "(✿´‿`)" },
-{ face: "ʘ‿ʘ" },
-{ face: "ಥ‿ಥ" },
-{ face: "ヘ(^_^ヘ)" },
-{ face: "ヘ(^o^ヘ)" },
-{ face: "(✿◠‿◠)" },
-{ face: "(◡‿◡✿)" },
-{ face: "˙ ͜ʟ˙" },
-{ face: "◦°˚\(*❛‿❛)/˚°◦" },
-{ face: "(　◠ ◡ ◠　)" },
-{ face: "〤◕‿◕〤" },
-{ face: "ᕕ( ᐛ )ᕗ" },
-{ face: "☜(⌒▽⌒)☞" },
-{ face: "୧[ ˵ ͡ᵔ ͜ʟ ͡ᵔ ˵ ]୨" },
-{ face: "♪♪ｖ(⌒ｏ⌒)ｖ♪♪" },
-{ face: "ﾍ(=￣∇￣)ﾉ" },
-{ face: "❀◕ ‿ ◕❀" },
-{ face: "ヾ(^▽^ヾ)" },
-{ face: "（★￣∀￣★）" },
-{ face: "(✿╹◡╹)" },
-{ face: "(o˘◡˘o)" }
-
-];
-
-var confused =
-[ { face: "(゜-゜)" },
-{ face: "(・_・ヾ" },
-{ face: "(•ิ_•ิ)?" },
-{ face: "｢(ﾟﾍﾟ)" },
-{ face: "(｀_´)ゞ" },
-{ face: "(´･_･`)" },
-{ face: "(。ヘ°)" },
-{ face: "(´−｀) ﾝｰ" },
-{ face: "(」・ω・)」" },
-{ face: "( ・◇・)？" },
-{ face: "(」゜ロ゜)」" },
-{ face: "(」ﾟヘﾟ)」" },
-{ face: "(￣■￣;)!?" },
-{ face: "(」ﾟﾛﾟ)｣" },
-{ face: "( •᷄ὤ•᷅)？" },
-{ face: "(＃⌒∇⌒＃)ゞ" },
-{ face: "(゜。゜)" },
-{ face: "(⊙_☉)" },
-{ face: "(⊙_◎)" },
-{ face: "(◎_◎;)" },
-{ face: "(●__●)" },
-{ face: "(☉_☉)" },
-{ face: "(C_C)" },
-{ face: "ヽ(゜Q。)ノ？" },
-{ face: "●.◉" },
-{ face: "c( O.O )ɔ" },
-{ face: "щ(゜ロ゜щ)" },
-{ face: "ఠ_ఠ" },
-{ face: "ʕ•ૅૄ•ʔ" },
-{ face: "ɾ◉⊆◉ɹ" },
-{ face: "(o゜ー゜o)??" },
-{ face: "（・∩・）？" },
-{ face: "Σ(￣□￣lll)" },
-{ face: "( -_・)?" }
-];
-
+//navigate to sections aka categories
 var navigateTo = function() {
     $('a[href*=#]:not([href=#])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -214,13 +22,14 @@ var navigateTo = function() {
         if (target.length) {
           $('html,body').animate({
             scrollTop: target.offset().top
-          }, 1000);
+          }, 500);
           return false;
         }
       }
     });
   };
 
+//expand/collapse icons next to categories
 var toggleText = function(expander){
     $(expander).append("<span>+</span>").click(function() {
         var $sp = $('span', this);
@@ -234,8 +43,11 @@ navigateTo();
 toggleText(".expander-angry");
 toggleText(".expander-happy");
 toggleText(".expander-confused");
+toggleText(".expander-surprised");
 
 var i = 1;
+
+// *************************** A N G R Y 
 
 //gets random ANGRY 6 emojis
 
@@ -243,7 +55,7 @@ while(i < 7) {
   r = Math.floor((Math.random() * angry.length-1) + 1);
 
   var item = angry[r].face;
-  $(".random-angry").append("<a class='unoji'>"+item+"</a>");
+  $(".random-angry").append("<div class='unoji'>"+item+"</div>");
   
   i++;
 }
@@ -253,13 +65,15 @@ var x = 0;
 
 while(x < angry.length) {
    var item = angry[x].face;
-   $(".content-angry").append("<a class='unoji'>"+item+"</a>");
+   $(".content-angry").append("<div class='unoji'>"+item+"</div>");
 
    x++;
 }
 
 //expands hidden unojis
 $('.expander-angry').simpleexpand({'defaultTarget':'.content-angry'});
+
+// *************************** H A P P Y 
 
 //shows 6 random HAPPY unojis
 var i = 1;
@@ -268,7 +82,7 @@ while(i < 7) {
   r = Math.floor((Math.random() * happy.length-1) + 1);
 
   var item = happy[r].face;
-  $(".random-happy").append("<a class='unoji'>"+item+"</a>");
+  $(".random-happy").append("<div class='unoji'>"+item+"</div>");
   
   i++;
 }
@@ -278,7 +92,7 @@ var x = 0;
 
 while(x < happy.length) {
    var item = happy[x].face;
-   $(".content-happy").append("<a class='unoji'>"+item+"</a>");
+   $(".content-happy").append("<div class='unoji'>"+item+"</div>");
 
    x++;
 }
@@ -286,6 +100,8 @@ while(x < happy.length) {
 //expands hidden unojis
 
 $('.expander-happy').simpleexpand({'defaultTarget':'.content-happy'});
+
+// *************************** C O N F U S E D 
 
 //gets random CONFUSED 6 emojis
 
@@ -295,7 +111,7 @@ while(i < 7) {
   r = Math.floor((Math.random() * confused.length-1) + 1);
 
   var item = confused[r].face;
-  $(".random-confused").append("<a class='unoji'>"+item+"</a>");
+  $(".random-confused").append("<div class='unoji'>"+item+"</div>");
   
   i++;
 }
@@ -305,7 +121,7 @@ var x = 0;
 
 while(x < confused.length) {
    var item = confused[x].face;
-   $(".content-confused").append("<a class='unoji'>"+item+"</a>");
+   $(".content-confused").append("<div class='unoji'>"+item+"</div>");
 
    x++;
 }
@@ -313,33 +129,160 @@ while(x < confused.length) {
 //expands hidden unojis
 $('.expander-confused').simpleexpand({'defaultTarget':'.content-confused'});
 
+// *************************** S U R P R I S E D 
 
-$(".unoji").hover(function () {
-   $(this).toggleClass("hoverColor");
+//gets random SURPRISED 6 emojis
+
+var i = 1;
+
+while(i < 7) {
+  r = Math.floor((Math.random() * surprised.length-1) + 1);
+
+  var item = surprised[r].face;
+  $(".random-surprised").append("<div class='unoji'>"+item+"</div>");
+  
+  i++;
+}
+
+//puts all other SURPRISED unojis with display off in div
+var x = 0;
+
+while(x < surprised.length) {
+   var item = surprised[x].face;
+   $(".content-surprised").append("<div class='unoji' type='text/plain'>"+item+"</div>");
+
+   x++;
+}
+
+//expands surprised unojis
+$('.expander-surprised').simpleexpand({'defaultTarget':'.content-surprised'});
+
+$(function() {
+    FastClick.attach(document.body);
 });
+//unoji alert copy to clipboard
 
-$(".unoji").click(function(){
-	swal({   title: "Copied to clipboard!",   
-	text: this.textContent,  
-	timer: 1000 });
-});
+var mq = window.matchMedia("(min-width: 540px)" ); //"(min-width: 540px)"
+
+if (mq.matches) {
+
+  //unojis color change over hover
+
+  $(".unoji").mouseenter(function () {
+    $(".unoji").removeClass("hoverColor");
+    $(this).addClass("hoverColor");
+  });
+
+  $(".unoji").mouseleave(function () {
+    $(this).removeClass("hoverColor");
+  });
+
+  $(".unoji").click(function(){
+    swal({   title: "Copied to clipboard!",   
+    text: this.textContent,  
+    timer: 500 });
+  });
 
 
-var client = new ZeroClipboard( $('.unoji') );
+  var client = new ZeroClipboard( $('.unoji') );
 
-client.on( 'ready', function(event) {
-  // console.log( 'movie is loaded' );
+  client.on( 'ready', function(event) {
+    // console.log( 'movie is loaded' );
 
-  client.on( 'copy', function(event) {
-    event.clipboardData.setData('text/plain', event.target.innerHTML);
+    client.on( 'copy', function(event) {
+      event.clipboardData.setData('text/plain', event.target.innerHTML);
+    } );
+
+    client.on( 'aftercopy', function(event) {
+      console.log('Copied text to clipboard: ' + event.data['text/plain']);
+    } );
   } );
 
-  client.on( 'aftercopy', function(event) {
-    console.log('Copied text to clipboard: ' + event.data['text/plain']);
-  } );
+  client.on( 'error', function(event) {
+    // console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+    ZeroClipboard.destroy();
 } );
+  // window width is at least 540px
+}
+else {
+  // window width is less than 540px
+   // Code credit: http://stackoverflow.com/questions/3514784/what-is-the-best-way-to-detect-a-mobile-device-in-jquery
 
-client.on( 'error', function(event) {
-  // console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
-  ZeroClipboard.destroy();
-} );
+    //  $(".unoji").tap(function(){
+    //   var text = this.textContent;
+    //   console.log(text);
+    //   text.();
+    // });
+
+// onClick="";
+
+ // $.fn.OneTapSelect = function(){
+ //      return $(this).on('click',function(){
+        
+ //         var range, selection;
+ //         if (window.getSelection) {
+ //            selection = window.getSelection();        
+ //            range = document.createRange();
+ //            range.selectNodeContents(this);
+ //            selection.removeAllRanges();
+ //            selection.addRange(range);
+ //        } else if (document.body.createTextRange) {
+ //            range = document.body.createTextRange();
+ //            range.moveToElementText(this);
+ //            range.select();
+ //        }
+ //      });
+ //    };
+
+ $(document).ready(
+    function() {
+        $('.unoji').click(
+            function() {
+                if ($('#tmp').length) {
+                    $('#tmp').remove();
+                }
+                var clickText = $(this).text();
+                $('<textarea id="tmp" />')
+                    .appendTo($(this))
+                    .val(clickText)
+                    .focus()
+                    .select();
+        return false;
+    });
+$(':not(.unoji)').click(
+    function(){
+        $('#tmp').remove();
+    });
+
+});
+    
+    // Apply to these elements
+    // $('.unoji').css('cursor','pointer');
+    // $('.unoji').OneTapSelect();
+
+
+      // $(".unoji").tap(function() {
+      // var x = this.innerText;
+      // console.log(this);
+      // console.log(x);
+      // $(this).select();
+      // $this.select();
+
+      // });
+    }
+
+ 
+
+    // Work around Chrome's little problem
+    // $this.mouseup(function() {
+    //     // Prevent further mouseup intervention
+    //     $this.unbind("mouseup");
+    //     return false;
+    // });
+
+
+
+
+
+
+
