@@ -42,12 +42,15 @@ navigateTo();
 
 toggleText(".expander-angry");
 toggleText(".expander-happy");
+toggleText(".expander-sad");
 toggleText(".expander-confused");
 toggleText(".expander-surprised");
+toggleText(".expander-love");
 
 var i = 1;
 
 // *************************** A N G R Y 
+
 
 //gets random ANGRY 6 emojis
 
@@ -72,6 +75,34 @@ while(x < angry.length) {
 
 //expands hidden unojis
 $('.expander-angry').simpleexpand({'defaultTarget':'.content-angry'});
+
+// *************************** S A D 
+
+var i = 1;
+
+while(i < 7) {
+  r = Math.floor((Math.random() * sad.length-1) + 1);
+
+  var item = sad[r].face;
+  $(".random-sad").append("<div class='unoji'>"+item+"</div>");
+  
+  i++;
+}
+
+//puts all other HAPPY unojis with display off in div
+var x = 0;
+
+while(x < sad.length) {
+   var item = sad[x].face;
+   $(".content-sad").append("<div class='unoji'>"+item+"</div>");
+
+   x++;
+}
+
+//expands hidden unojis
+
+$('.expander-sad').simpleexpand({'defaultTarget':'.content-sad'});
+
 
 // *************************** H A P P Y 
 
@@ -157,6 +188,34 @@ while(x < surprised.length) {
 //expands surprised unojis
 $('.expander-surprised').simpleexpand({'defaultTarget':'.content-surprised'});
 
+// *************************** L O V E 
+
+//gets random LOVE 6 emojis
+
+var i = 1;
+
+while(i < 7) {
+  r = Math.floor((Math.random() * love.length-1) + 1);
+
+  var item = love[r].face;
+  $(".random-love").append("<div class='unoji'>"+item+"</div>");
+  
+  i++;
+}
+
+//puts all other LOVE unojis with display off in div
+var x = 0;
+
+while(x < love.length) {
+   var item = love[x].face;
+   $(".content-love").append("<div class='unoji'>"+item+"</div>");
+
+   x++;
+}
+
+//expands hidden unojis
+$('.expander-love').simpleexpand({'defaultTarget':'.content-love'});
+
 $(function() {
     FastClick.attach(document.body);
 });
@@ -164,7 +223,25 @@ $(function() {
 
 var mq = window.matchMedia("(min-width: 540px)" ); //"(min-width: 540px)"
 
-if (mq.matches) {
+//CHECKS IF FLASH IS INSTALLED/ENABLED
+
+var hasFlash = false;
+try {
+  var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+  if (fo) {
+    hasFlash = true;
+  }
+} catch (e) {
+  if (navigator.mimeTypes
+        && navigator.mimeTypes['application/x-shockwave-flash'] != undefined
+        && navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) {
+    hasFlash = true;
+  }
+}
+
+
+//IF NOT MOBILE AND HAS FLASH DO THE COPY TO CLIPBOARD THANG
+if (mq.matches && hasFlash) {
 
   //unojis color change over hover
 
@@ -183,7 +260,6 @@ if (mq.matches) {
     timer: 500 });
   });
 
-
   var client = new ZeroClipboard( $('.unoji') );
 
   client.on( 'ready', function(event) {
@@ -198,41 +274,13 @@ if (mq.matches) {
     } );
   } );
 
-  client.on( 'error', function(event) {
-    // console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
-    ZeroClipboard.destroy();
-} );
-  // window width is at least 540px
-}
+    client.on( 'error', function(event) {
+      // console.log( 'ZeroClipboard error of type "' + event.name + '": ' + event.message );
+      ZeroClipboard.destroy();
+  } );
+    // window width is at least 540px
+  }
 else {
-  // window width is less than 540px
-   // Code credit: http://stackoverflow.com/questions/3514784/what-is-the-best-way-to-detect-a-mobile-device-in-jquery
-
-    //  $(".unoji").tap(function(){
-    //   var text = this.textContent;
-    //   console.log(text);
-    //   text.();
-    // });
-
-// onClick="";
-
- // $.fn.OneTapSelect = function(){
- //      return $(this).on('click',function(){
-        
- //         var range, selection;
- //         if (window.getSelection) {
- //            selection = window.getSelection();        
- //            range = document.createRange();
- //            range.selectNodeContents(this);
- //            selection.removeAllRanges();
- //            selection.addRange(range);
- //        } else if (document.body.createTextRange) {
- //            range = document.body.createTextRange();
- //            range.moveToElementText(this);
- //            range.select();
- //        }
- //      });
- //    };
 
  $(document).ready(
     function() {
@@ -255,31 +303,8 @@ $(':not(.unoji)').click(
     });
 
 });
-    
-    // Apply to these elements
-    // $('.unoji').css('cursor','pointer');
-    // $('.unoji').OneTapSelect();
-
-
-      // $(".unoji").tap(function() {
-      // var x = this.innerText;
-      // console.log(this);
-      // console.log(x);
-      // $(this).select();
-      // $this.select();
-
-      // });
-    }
-
  
-
-    // Work around Chrome's little problem
-    // $this.mouseup(function() {
-    //     // Prevent further mouseup intervention
-    //     $this.unbind("mouseup");
-    //     return false;
-    // });
-
+} 
 
 
 

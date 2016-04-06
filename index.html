@@ -3,36 +3,62 @@
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<title>unoji</title>
-	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" media="handheld, only screen and (max-device-width: 540px)" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+
 	<link rel="stylesheet" type="text/css" href="sweetAlert/sweet-alert.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap_default.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-	<header class="headroom">
-		<h1>Unoji</h1>
-		<ul class="menu">
-			<li class="categories">Categories▾
-				<ul class="dropdown-menu">
-					<li><a href="#section-happy">Happy</a></li>
-					<li><a href="#section-angry">Angry</a></li>
-					<li><a href="#section-confused">Confused</a></li>
-					<li><a href="#section-surprised">Surprised</a></li>
-				</ul>
-			</li>
-			<li class="about"><a href="#">About</a></li>
-		</ul>
-	</header>
-	<div class="container" id="section-happy">
+	<nav class="navbar navbar-default headroom">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="index.html">UNOJI</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	  	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li id="about"><a href="about.html">About</a></li>
+	        <li id="categories" class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span id="caret" class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#section-happy">Happy</a></li>
+	            <li><a href="#section-sad">Sad</a></li>
+	            <li><a href="#section-angry">Angry</a></li>
+	            <li><a href="#section-confused">Confused</a></li>
+	            <li><a href="#section-surprised">Surprised</a></li>
+	            <li><a href="#section-loving">Loving</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<div class="container">
 		<div class="happy">
-			<h3>Happy<a class="expander-happy"></a></h3>
+			<h3>Happy<a class="expander-happy" id="section-happy"></a></h3>
 			<span class="random-happy"></span><span class="content-happy"></span>
-		</div><br>
-		<div class="angry">
+		</div>
+		<div class="sad"><br>
+			<h3>Sad<a class="expander-sad" id="section-sad"></a></h3>
+			<span class="random-sad"></span><span class="content-sad"></span>
+		</div>
+		<div class="angry"><br>
 			<h3>Angry<a class="expander-angry" id="section-angry"></a></h3>
 			<span class="random-angry"></span><span class="content-angry"></span>
+		</div>
 		<div class="confused"><br>
 			<h3>Confused<a class="expander-confused" id="section-confused"></a></h3>
 			<span class="random-confused"></span><span class="content-confused"></span>
@@ -40,9 +66,27 @@
 		<div class="surprised"><br>
 			<h3>Surprised<a class="expander-surprised" id="section-surprised"></a></h3>
 			<span class="random-surprised"></span><span class="content-surprised"></span>
-		</div><br>
-		
+		</div>
+		<div class="love"><br>
+			<h3>Loving<a class="expander-love" id="section-love"></a></h3>
+			<span class="random-love"></span><span class="content-love"></span>
+		</div><br><b><br><br>
 	</div>
+
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+
+	<script type="text/javascript" src="js/headroom.js"></script>
+	<script type="text/javascript" src="js/ZeroClipboard.js"></script>
+	<script src="sweetAlert/sweet-alert.min.js"></script> 
+	<script type="text/javascript" src="js/expand.js"></script>
+	<script type='application/javascript' src='js/fastclick.js'></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/unojis.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+
 
 	<!-- google analytics -->
 	<script>
@@ -55,15 +99,8 @@
 	  ga('send', 'pageview');
 
 	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
-	<script type="text/javascript" src="headroom.js"></script>
-	<script type="text/javascript" src="ZeroClipboard.js"></script>
-	<script src="sweetAlert/sweet-alert.min.js"></script> 
-	<script type="text/javascript" src="expand.js"></script>
-	<script type='application/javascript' src='fastclick.js'></script>
-	<script type="text/javascript" src="unojis.js" charset="UTF-8"></script>
-	<script type="text/javascript" src="app.js"></script>
+
+
 
 </body>
 </html>
