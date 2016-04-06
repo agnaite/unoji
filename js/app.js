@@ -1,41 +1,41 @@
 //divutohide header via headroom.js
 (function() {
-    var header = new Headroom(document.querySelector(".headroom"), {
-        tolerance: 5,
-        offset : 205,
-        classes: {
-          initial: "headroom",
-          pinned: "headroom--pinned",
-          unpinned: "headroom--unpinned"
-        }
-    });
-    header.init();
+  var header = new Headroom(document.querySelector(".headroom"), {
+      tolerance: 5,
+      offset : 205,
+      classes: {
+        initial: "headroom",
+        pinned: "headroom--pinned",
+        unpinned: "headroom--unpinned"
+      }
+  });
+  header.init();
 }());
 
 //navigate to sections aka categories
 var navigateTo = function() {
-    $('a[href*=#]:not([href=#])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html,body').animate({
-            scrollTop: target.offset().top
-          }, 500);
-          return false;
-        }
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+        return false;
       }
-    });
+    }
+  });
   };
 
 //expand/collapse icons next to categories
 var toggleText = function(expander){
-    $(expander).append("<span>+</span>").click(function() {
-        var $sp = $('span', this);
-        $(this).nextUntil("hr").slideToggle("fast");
-        $sp.text( $sp.text()=="+"?"−":"+");
-    }).nextUntil("hr").hide();
+  $(expander).append("<span>+</span>").click(function() {
+      var $sp = $('span', this);
+      $(this).nextUntil("hr").slideToggle("fast");
+      $sp.text( $sp.text()=="+"?"−":"+");
+  }).nextUntil("hr").hide();
 }
 
 navigateTo();
@@ -67,10 +67,10 @@ while(i < 7) {
 var x = 0;
 
 while(x < angry.length) {
-   var item = angry[x].face;
-   $(".content-angry").append("<div class='unoji'>"+item+"</div>");
+  var item = angry[x].face;
+  $(".content-angry").append("<div class='unoji'>"+item+"</div>");
 
-   x++;
+  x++;
 }
 
 //expands hidden unojis
@@ -93,16 +93,15 @@ while(i < 7) {
 var x = 0;
 
 while(x < sad.length) {
-   var item = sad[x].face;
-   $(".content-sad").append("<div class='unoji'>"+item+"</div>");
+  var item = sad[x].face;
+  $(".content-sad").append("<div class='unoji'>"+item+"</div>");
 
-   x++;
+  x++;
 }
 
 //expands hidden unojis
 
 $('.expander-sad').simpleexpand({'defaultTarget':'.content-sad'});
-
 
 // *************************** H A P P Y 
 
@@ -122,10 +121,10 @@ while(i < 7) {
 var x = 0;
 
 while(x < happy.length) {
-   var item = happy[x].face;
-   $(".content-happy").append("<div class='unoji'>"+item+"</div>");
+  var item = happy[x].face;
+  $(".content-happy").append("<div class='unoji'>"+item+"</div>");
 
-   x++;
+  x++;
 }
 
 //expands hidden unojis
@@ -151,10 +150,10 @@ while(i < 7) {
 var x = 0;
 
 while(x < confused.length) {
-   var item = confused[x].face;
-   $(".content-confused").append("<div class='unoji'>"+item+"</div>");
+  var item = confused[x].face;
+  $(".content-confused").append("<div class='unoji'>"+item+"</div>");
 
-   x++;
+  x++;
 }
 
 //expands hidden unojis
@@ -179,10 +178,10 @@ while(i < 7) {
 var x = 0;
 
 while(x < surprised.length) {
-   var item = surprised[x].face;
-   $(".content-surprised").append("<div class='unoji' type='text/plain'>"+item+"</div>");
+  var item = surprised[x].face;
+  $(".content-surprised").append("<div class='unoji' type='text/plain'>"+item+"</div>");
 
-   x++;
+  x++;
 }
 
 //expands surprised unojis
@@ -207,10 +206,10 @@ while(i < 7) {
 var x = 0;
 
 while(x < love.length) {
-   var item = love[x].face;
-   $(".content-love").append("<div class='unoji'>"+item+"</div>");
+  var item = love[x].face;
+  $(".content-love").append("<div class='unoji'>"+item+"</div>");
 
-   x++;
+  x++;
 }
 
 //expands hidden unojis
@@ -283,29 +282,27 @@ if (mq.matches && hasFlash) {
 else {
 
  $(document).ready(
-    function() {
-        $('.unoji').click(
-            function() {
-                if ($('#tmp').length) {
-                    $('#tmp').remove();
-                }
-                var clickText = $(this).text();
-                $('<textarea id="tmp" />')
-                    .appendTo($(this))
-                    .val(clickText)
-                    .focus()
-                    .select();
-        return false;
-    });
+  function() {
+    $('.unoji').click(
+        function() {
+            if ($('#tmp').length) {
+                $('#tmp').remove();
+            }
+            var clickText = $(this).text();
+            $('<textarea id="tmp" />')
+                .appendTo($(this))
+                .val(clickText)
+                .focus()
+                .select();
+          return false;
+          });
+
 $(':not(.unoji)').click(
     function(){
         $('#tmp').remove();
     });
-
-});
- 
-} 
-
+  });
+}
 
 
 

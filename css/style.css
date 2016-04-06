@@ -18,14 +18,14 @@
 .headroom {
 	background-image: linear-gradient(-90deg, #F6FF00, #FF00A1);
 	/* Fallback (could use .jpg/.png alternatively) */
-    background-color: #F6FF00;
-    background-image: -webkit-gradient(
-		linear,
-		right bottom,
-		left bottom,
-		color-stop(0, #F7FF00),
-		color-stop(1, #FF00A2)
-	);
+  background-color: #F6FF00;
+  background-image: -webkit-gradient(
+										linear,
+										right bottom,
+										left bottom,
+										color-stop(0, #F7FF00),
+										color-stop(1, #FF00A2)
+									);
 
 	background-image: -o-linear-gradient(left, #F7FF00 0%, #FF00A2 100%);
 	background-image: -moz-linear-gradient(right, #F7FF00 0%, #FF00A2 100%);
@@ -44,8 +44,6 @@
 	right: 0;
 	transition: all .3s ease-in-out;
 }
-
-
 
 .headroom--unpinned {
 	top: -140px;
